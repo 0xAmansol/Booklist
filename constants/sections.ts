@@ -7,12 +7,12 @@ export const SECTIONS = [
     icon: Compass,
   },
   {
-    label: "Launchpad",
+    label: "Launchpad (Coming soon)",
     href: "/dashboard/launchpad",
     icon: Rocket,
   },
   {
-    label: "Leaderboard",
+    label: "Leaderboard ",
     href: "/dashboard/leaderboard",
     icon: Trophy,
   },

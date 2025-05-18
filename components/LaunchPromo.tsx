@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 
 const LaunchPromo = () => {
   return (
-    <div className="rounded-lg border bg-card p-4 relative overflow-hidden">
+    <div className="rounded-xl border bg-card p-4 relative overflow-hidden bg-gradient-to-tl from-emerald-200 to-transparent">
       <div className="flex items-start gap-3">
         <Rocket className="h-8 w-8 text-red-500" />
         <div className="space-y-1">

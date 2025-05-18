@@ -14,6 +14,7 @@ export async function createBookRecommendation(book: {
   categories: string[];
   user_id: string;
   user_email: string;
+  user_name: string | null | undefined;
 }) {
   const { error } = await supabase.from("recommendations").insert([
     {
@@ -23,6 +24,9 @@ export async function createBookRecommendation(book: {
       description: book.description,
       cover_image: book.coverImage,
       categories: book.categories,
+      user_id: book.user_id,
+      user_email: book.user_email,
+      user_name: book.user_name,
       likes: 0,
       comments: 0,
       votes: 0,

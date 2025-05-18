@@ -1,4 +1,3 @@
-// RecommendBookDialog.tsx
 "use client";
 
 import {
@@ -13,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState, useEffect } from "react";
 import { searchBooks } from "@/lib/googleBooks";
-import { createBookRecommendation } from "@/lib/supabase"; // We'll define this later
+import { createBookRecommendation } from "@/lib/supabase";
 import { supabase } from "@/lib/supabase";
 import type { User } from "@supabase/supabase-js";
 
@@ -52,6 +51,7 @@ export default function RecommendBookDialog() {
       ...book,
       user_id: user.id,
       user_email: user.email || "",
+      user_name: user.user_metadata?.name as string | null | undefined,
     });
     alert("Book recommended!");
   };
@@ -87,7 +87,7 @@ export default function RecommendBookDialog() {
           <Button
             onClick={handleSearch}
             disabled={loading}
-            className="bg-emerald-600 hover:bg-emerald-500 text-white"
+            className="bg-emerald-600 hover:bg-emerald-500 text-white font-instrument-serif"
           >
             Search
           </Button>
