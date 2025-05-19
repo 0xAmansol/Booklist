@@ -80,7 +80,7 @@ const Sidebar = () => {
             <div className="bg-gray-100 p-4 rounded-lg flex flex-col items-center text-center space-y-3 border hover:border-emerald-500">
               <div className="w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden">
                 {userImageUrl ? (
-                  <img
+                  <Image
                     src={userImageUrl}
                     alt={`${user.email}'s avatar`}
                     width={64}

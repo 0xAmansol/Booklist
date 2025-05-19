@@ -8,6 +8,7 @@ import {
 import { Check, Star, ThumbsUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
 export interface BookProps {
   id: string;
@@ -41,7 +42,7 @@ export default function BookCard({
 
         <div className=" aspect-[2/3] w-30 mb-3 bg-muted rounded-md overflow-hidden justify-center flex">
           {book.thumbnail ? (
-            <img
+            <Image
               src={book.thumbnail || "/placeholder.svg"}
               alt={book.title}
               className="w-30 h-40 object-cover"
