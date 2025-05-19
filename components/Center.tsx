@@ -13,10 +13,10 @@ const Center = async () => {
     }))
   );
   return (
-    <div className="w-full justify-center items-center flex flex-col">
+    <div className="w-full max-w-xl justify-center items-center flex flex-col">
       <div
         className="space-y-8
-        w-2xl border-l border-r border-gray-200"
+        w-xl border-l border-r border-gray-200"
       >
         <Header />
         <h1 className="font-instrument-serif text-3xl text-emerald-700 font-semibold flex items-center justify-start pl-4">

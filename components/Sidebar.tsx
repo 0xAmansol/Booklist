@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen } from "lucide-react";
+import { BookOpen, LogOut, UserCircle } from "lucide-react";
 import { SECTIONS } from "@/constants/sections";
 import { Button } from "./ui/button";
 import { supabase } from "@/lib/supabase";
@@ -20,9 +20,11 @@ const Sidebar = () => {
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
-    // Optionally, redirect or refresh
+
     window.location.reload();
   };
+
+  const userImageUrl = user?.user_metadata?.avatar_url as string | undefined;
 
   return (
     <div className="h-full flex justify-center">
@@ -74,18 +76,32 @@ const Sidebar = () => {
           })}
         </nav>
         {user && (
-          <div className="mt-auto pt-4 text-sm text-gray-700 border-t">
-            <div className="font-semibold">{user.email}</div>
+          <div className="mt-auto pt-4">
+            <div className="bg-gray-100 p-4 rounded-lg flex flex-col items-center text-center space-y-3 border hover:border-emerald-500">
+              <div className="w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden">
+                {userImageUrl ? (
+                  <img
+                    src={userImageUrl}
+                    alt={`${user.email}'s avatar`}
+                    width={64}
+                    height={64}
+                    className="object-cover w-full h-full"
+                  />
+                ) : (
+                  <UserCircle size={48} className="text-gray-600" />
+                )}
+              </div>
+              <h4 className="font-semibold text-gray-800">Logged in as:</h4>
+              <p className="text-xs text-gray-600 break-all">{user.email}</p>
+              <Button
+                variant="outline"
+                className="w-full"
+                onClick={handleSignOut}
+              >
+                <LogOut size={16} className="mr-2" /> Sign Out
+              </Button>
+            </div>
           </div>
-        )}
-        {user && (
-          <Button
-            variant="outline"
-            className="w-full mt-2"
-            onClick={handleSignOut}
-          >
-            Sign Out
-          </Button>
         )}
       </div>
     </div>
