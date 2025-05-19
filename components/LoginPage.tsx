@@ -15,7 +15,7 @@ const Login = () => {
           supabaseClient={supabase}
           appearance={{ theme: ThemeSupa }}
           providers={["google", "github"]}
-          redirectTo={`${window.location.origin}/dashboard/leaderboard`}
+          redirectTo={`https://booklist-navy.vercel.app/dashboard/leaderboard`}
         />
       </div>
     </div>
