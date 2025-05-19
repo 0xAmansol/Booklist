@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     creator: "@0xAmansol",
     title: "BookList - Book Recommendations",
     description: "Discover and share your favorite books",
-    images: "https://your_website.com/og-image.jpg",
+    images: "https://i.postimg.cc/Z0tGFy6R/783shots-so.png",
   },
 };
 
