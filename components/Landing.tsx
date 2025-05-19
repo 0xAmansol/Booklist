@@ -44,7 +44,7 @@ const Landing = () => {
       <header className="flex items-center justify-center px-8 py-8 bg-white sticky top-0 z-10">
         <Link href="/" className="flex items-center gap-1">
           <Image
-            src="/booklist.png"
+            src="/booklist.svg"
             alt="BookList Logo"
             width={50}
             height={50}

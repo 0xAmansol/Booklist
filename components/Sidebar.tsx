@@ -32,7 +32,7 @@ const Sidebar = () => {
         <div className="flex items-center justify-start mb-6">
           <Link href="/" className="flex items-center gap-1 pl-2">
             <Image
-              src="/booklist.png"
+              src="/booklist.svg"
               alt="BookList Logo"
               width={40}
               height={40}
