@@ -18,6 +18,7 @@ import type { User } from "@supabase/supabase-js";
 
 import Header from "./Header";
 import { supabase } from "@/lib/supabase";
+import { toast } from "sonner";
 
 const formatTime = (totalSeconds: number) => {
   const hours = Math.floor(totalSeconds / 3600);
@@ -154,6 +155,10 @@ export default function BookDiscovery() {
     }
     setLoadingId(bookId);
 
+    // find the book first
+    const book = dbBooks.find((b) => b.id === bookId);
+    if (!book) return; // exit if book not found
+
     // already upvoted?
     const { data: existingVote } = await supabase
       .from("book_votes")
@@ -163,9 +168,15 @@ export default function BookDiscovery() {
       .single();
 
     if (existingVote) {
-      alert("You have already upvoted this book.");
+      toast("You have already upvoted this book.", {
+        classNames: { toast: "bg-emerald-500 text-white" },
+      });
       setLoadingId(null);
       return;
+    } else {
+      toast(`You upvoted ${book?.title}`, {
+        classNames: { toast: "bg-emerald-600 text-white" },
+      });
     }
 
     await supabase
@@ -173,7 +184,6 @@ export default function BookDiscovery() {
       .insert([{ user_id: user.id, book_id: bookId }]);
 
     // Increment vote count
-    const book = dbBooks.find((b) => b.id === bookId);
     if (book) {
       await supabase
         .from("recommendations")
@@ -197,6 +207,9 @@ export default function BookDiscovery() {
       .update({ likes: book.likes + 1 })
       .eq("id", bookId);
 
+    toast(`You liked ${book.title}`, {
+      classNames: { toast: "bg-emerald-500 text-white" },
+    });
     setLoadingId(null);
   };
 

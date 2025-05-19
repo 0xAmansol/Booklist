@@ -15,6 +15,7 @@ import { searchBooks } from "@/lib/googleBooks";
 import { createBookRecommendation } from "@/lib/supabase";
 import { supabase } from "@/lib/supabase";
 import type { User } from "@supabase/supabase-js";
+import { toast } from "sonner";
 
 type BookSearchResult = {
   id: string;
@@ -44,7 +45,7 @@ export default function RecommendBookDialog() {
 
   const handleRecommend = async (book: BookSearchResult) => {
     if (!user) {
-      alert("You must be logged in to recommend a book.");
+      toast("You must be logged in to recommend a book.");
       return;
     }
     await createBookRecommendation({
@@ -53,7 +54,7 @@ export default function RecommendBookDialog() {
       user_email: user.email || "",
       user_name: user.user_metadata?.name as string | null | undefined,
     });
-    alert("Book recommended!");
+    toast("Book recommended!");
   };
 
   return (
