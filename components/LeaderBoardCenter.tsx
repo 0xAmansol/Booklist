@@ -74,7 +74,7 @@ export default function BookDiscovery() {
     const thisWeekIdx = weekOptions.findIndex((w) => w.isCurrent);
     return thisWeekIdx !== -1 ? thisWeekIdx : weekOptions.length - 1;
   });
-  const visibleCount = 7;
+  const visibleCount = 5;
   const maxScroll = Math.max(0, weekOptions.length - visibleCount);
   const [scrollIdx, setScrollIdx] = useState(() =>
     Math.max(0, selectedWeek - Math.floor(visibleCount / 2))
