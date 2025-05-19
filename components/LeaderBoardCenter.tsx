@@ -214,7 +214,7 @@ export default function BookDiscovery() {
   };
 
   return (
-    <div className="w-full max-w-xl mx-auto bg-white border-l shadow-sm h-screen flex flex-col">
+    <div className="w-full max-w-xl mx-auto bg-white border shadow-sm h-screen flex flex-col">
       <Header />
 
       <div className="relative flex items-center p-2 border-b  flex-shrink-0">
@@ -228,7 +228,7 @@ export default function BookDiscovery() {
       <div className="px-5 py-2 ">
         <div className="relative">
           <div
-            className="flex items-center gap-2 py-2 px-1 bg-gray-50 rounded-t min-w-max overflow-x-auto scrollbar-hide flex-shrink-0"
+            className="flex items-center gap-2 py-2 px-1 bg-gray-50 rounded-t min-w-max  scrollbar-hide flex-shrink-0"
             style={{ scrollbarWidth: "none" }}
           >
             <button

@@ -45,7 +45,9 @@ export default function BookCard({
             <Image
               src={book.thumbnail || "/placeholder.svg"}
               alt={book.title}
-              className="w-30 h-40 object-cover"
+              width="120"
+              height="40"
+              className="object-cover"
             />
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-emerald-100 to-emerald-200 flex items-center justify-center">
