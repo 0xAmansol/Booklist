@@ -296,7 +296,7 @@ export default function BookDiscovery() {
         </p>
       </div>
 
-      <div className="divide-y  flex-1">
+      <div className="divide-y overflow-y-auto flex-1">
         {dbBooks.map((book) => (
           <div key={book.id} className="flex gap-4 p-4 hover:bg-gray-50">
             <div className="flex-shrink-0 w-16 text-center">

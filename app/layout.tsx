@@ -9,6 +9,14 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 export const metadata: Metadata = {
   title: "BookList - Book Recommendations",
   description: "Discover and share your favorite books",
+  twitter: {
+    card: "summary_large_image",
+    site: "@your_twitter_handle", // Replace with your Twitter handle
+    creator: "@your_creator_handle", // Replace with your creator Twitter handle
+    title: "BookList - Book Recommendations",
+    description: "Discover and share your favorite books",
+    images: "https://your_website.com/og-image.jpg", // Replace with your image URL
+  },
 };
 
 export default function RootLayout({
