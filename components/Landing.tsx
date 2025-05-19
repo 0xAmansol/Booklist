@@ -5,6 +5,7 @@ import CustomFloatingCard from "./CustomFloatingCard";
 import { RocketIcon } from "./ui/rocket";
 import Features from "./Features";
 import AppFooter from "./AppFooter";
+import Image from "next/image";
 
 // Placeholder icons - replace with actual icons from a library if needed
 const BookIcon = () => <span className="text-2xl">📖</span>;
@@ -40,15 +41,19 @@ const Landing = () => {
 
   return (
     <div ref={ref} className="min-h-screen bg-white flex flex-col">
-      <header className="flex items-center justify-between px-8 py-4  bg-white sticky top-0 z-10">
-        <div className="flex items-center gap-8">
-          <Link
-            href="/login"
-            className="text-gray-700 font-medium hover:text-emerald-600"
-          >
-            Log in
-          </Link>
-        </div>
+      <header className="flex items-center justify-center px-8 py-8 bg-white sticky top-0 z-10">
+        <Link href="/" className="flex items-center gap-1">
+          <Image
+            src="/BookList.png"
+            alt="BookList Logo"
+            width={50}
+            height={50}
+            priority
+          />
+          <span className="font-instrument-serif text-2xl font-bold">
+            BookList
+          </span>
+        </Link>
       </header>
 
       <main className="flex-1 flex flex-col items-center relative overflow-x-clip">

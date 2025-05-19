@@ -8,6 +8,7 @@ import { SECTIONS } from "@/constants/sections";
 import { Button } from "./ui/button";
 import { supabase } from "@/lib/supabase";
 import type { User } from "@supabase/supabase-js";
+import Image from "next/image";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -26,12 +27,20 @@ const Sidebar = () => {
   return (
     <div className="h-full flex justify-center">
       <div className="p-4 border-b w-full flex flex-col h-full">
-        <Link href="/" className="flex items-center gap-2 pl-2 mb-6">
-          <BookOpen className="h-6 w-6 text-emerald-600" />
-          <span className="font-instrument-serif text-3xl font-bold">
-            BookList
-          </span>
-        </Link>
+        <div className="flex items-center justify-start mb-6">
+          <Link href="/" className="flex items-center gap-1 pl-2">
+            <Image
+              src="/BookList.png"
+              alt="BookList Logo"
+              width={40}
+              height={40}
+              priority
+            />
+            <span className="font-instrument-serif text-xl font-bold text-black">
+              BookList
+            </span>
+          </Link>
+        </div>
 
         <nav className="flex-1 space-y-2">
           {SECTIONS.map(({ label, href, icon: Icon }) => {
