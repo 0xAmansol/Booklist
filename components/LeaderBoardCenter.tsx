@@ -228,7 +228,7 @@ export default function BookDiscovery() {
       <div className="px-5 py-2 ">
         <div className="relative">
           <div
-            className="flex items-center gap-2 py-2 px-1 bg-gray-50 rounded-t  scrollbar-hide flex-shrink-0"
+            className="flex items-center gap-2 py-2 px-1 bg-gray-50 rounded-t  scrollbar-hide"
             style={{ scrollbarWidth: "none" }}
           >
             <button
