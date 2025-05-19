@@ -11,11 +11,11 @@ export const metadata: Metadata = {
   description: "Discover and share your favorite books",
   twitter: {
     card: "summary_large_image",
-    site: "@your_twitter_handle", // Replace with your Twitter handle
-    creator: "@your_creator_handle", // Replace with your creator Twitter handle
+    site: "@your_twitter_handle",
+    creator: "@0xAmansol",
     title: "BookList - Book Recommendations",
     description: "Discover and share your favorite books",
-    images: "https://your_website.com/og-image.jpg", // Replace with your image URL
+    images: "https://your_website.com/og-image.jpg",
   },
 };
 
